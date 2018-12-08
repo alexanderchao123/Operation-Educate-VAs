@@ -35,6 +35,9 @@ ActiveRecord::Schema.define(version: 2018_12_08_031146) do
     t.integer "time_in_combat"
     t.integer "dependents"
     t.string "education_level"
+    t.string "discharge_date"
+    t.string "part_online_fulltime"
+    t.string "cumm_nine_elev"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_questionaires_on_user_id"
