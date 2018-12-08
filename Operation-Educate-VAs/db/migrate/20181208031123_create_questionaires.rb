@@ -4,8 +4,9 @@ class CreateQuestionaires < ActiveRecord::Migration[5.2]
         t.references :user
         t.string :date_of_birth
         t.string :sex
+        t.string :city
         t.string :role_in_military
-        t.integer :time_in_military
+        t.string :military_start_date
         t.integer :time_in_combat
         t.integer :dependents
         t.string :education_level

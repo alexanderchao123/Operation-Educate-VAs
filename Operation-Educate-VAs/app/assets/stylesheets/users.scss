@@ -1,3 +1,30 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#vet-data{
+    padding-bottom: 50px;
+}
+#vet-data th{
+    text-align: center;
+    padding-left: 50px;
+}
+
+#vet-data td{
+    text-align: center;
+    padding-left: 50px;
+}
+#button{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin:auto;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+
+}

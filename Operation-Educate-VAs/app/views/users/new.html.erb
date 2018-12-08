@@ -15,19 +15,20 @@
     </head>
     <body>
         <%= form_with model: @user, local: true do |f| %>
-          <%= f.label :first_name %>
+        <div class="tab">Name:
           <%= f.text_field :fname %>
 
-          <%= f.label :last_name %>
           <%= f.text_field :lname %>
-
+        </div>
+        <div class="tab">Contact-Info:
           <%= f.label :email %>
           <%= f.text_field :email %><br/>
 
           <%= f.label :va_number %>
           <%= f.text_field :va_number %><br/>
-
+        </div>
             <%= f.fields_for :questionaire, @user.questionaire do |quest| %>
+            <div class="tab">Personal-Info:
               <div class="field">
                 <%= quest.label :date_of_birth %>
                 <%= quest.text_field :date_of_birth, class:"datepicker", type:"text" %>
@@ -40,14 +41,21 @@
                 <%= quest.label :city %>
                 <%= quest.text_field :city %>
               </div>
+            </div>
+            <div class="tab">Military History:
               <div class="field">
-                <%= quest.label :time_in_military_in_months %>
-                <%= quest.text_field :time_in_military %>
+                <%= quest.label :military_start_date %>
+                <%= quest.text_field :military_start_date, class:"datepicker", type:"text" %>
               </div>
               <div class="field">
                 <%= quest.label :time_in_combat_in_months %>
                 <%= quest.text_field :time_in_combat %>
               </div>
+              <div class="field">
+                <%= quest.label :discharge_date %>
+                <%= quest.text_field :discharge_date, class:"datepicker", type:"text" %>
+              </div>
+            </div>
               <div class="field">
                 <%= quest.label :dependents %>
                 <%= quest.text_field :dependents %>
@@ -56,16 +64,13 @@
                 <%= quest.label :education_level %>
                 <%= quest.text_field :education_level %>
               </div>
-              <div class="field">
-                <%= quest.label :discharge_date %>
-                <%= quest.text_field :discharge_date, class:"datepicker", type:"text" %>
-              </div>
+
               <div class="field">
                 <%= quest.label :Part_Time_or_Fulltime_Or_Online %>
                 <%= quest.text_field :part_online_fulltime %>
               </div>
               <div class="field">
-                <%= quest.label :Cummilitave_time_after_9_11_in_months %>
+                <%= quest.label :Cummilitave_time_after_9_11_in_months, value: "Cummuliative time after 9/11" %>
                 <%= quest.text_field :cumm_nine_elev %>
               </div>
             <%end%>

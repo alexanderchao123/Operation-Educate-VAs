@@ -1,2 +1,43 @@
-<h1>Welcome <%= @user.fname %> <%= @user.lname %> </h1>
-<h2>Please select all the schools you would like a VA counselor to contact you about</h2>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <h1>Welcome <%= @user.fname %> <%= @user.lname %> </h1>
+        <%= @user.questionaire.military_start_date %>
+        <h2>Please select all the schools you would like a VA counselor to contact you about</h2>
+        <table id = "vet-data">
+            <tr>
+                <th>Name of School</th>
+                <th>City</th>
+                <th>Representative</th>
+                <th>Contact</th>
+                <th>Veterans</th>
+                <th>Tuition</th>
+                <th>Tuition Aid</th>
+                <th>Email(Y/N)</th>
+            </tr>
+            <% @schools.each do |school| %>
+            <tr>
+                <td><%= school.name %></td>
+                <td><%= school.city %></td>
+                <td><%= school.rep %></td>
+                <td><%= school.email %></td>
+                <td><%= school.veterans %></td>
+                <td><%= school.tuition %></td>
+                <td><%= school.tuition_aid %></td>
+                <td><input type="checkbox" name="name1" />&nbsp;</td>
+            </tr>
+            <%end %>
+        </table>
+         <a id="button" id = "button-right">Send Email </a>
+
+
+
+
+
+
+    </body>
+</html>

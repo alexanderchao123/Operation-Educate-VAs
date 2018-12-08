@@ -15,23 +15,13 @@ ActiveRecord::Schema.define(version: 2018_12_08_102116) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "questionaire_skills", force: :cascade do |t|
-    t.bigint "questionaire_id"
-    t.bigint "skill_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["questionaire_id"], name: "index_questionaire_skills_on_questionaire_id"
-    t.index ["skill_id"], name: "index_questionaire_skills_on_skill_id"
-  end
-
   create_table "questionaires", force: :cascade do |t|
     t.bigint "user_id"
-    t.string "fname"
-    t.string "lname"
     t.string "date_of_birth"
     t.string "sex"
+    t.string "city"
     t.string "role_in_military"
-    t.integer "time_in_military"
+    t.string "military_start_date"
     t.integer "time_in_combat"
     t.integer "dependents"
     t.string "education_level"
@@ -40,8 +30,6 @@ ActiveRecord::Schema.define(version: 2018_12_08_102116) do
     t.string "cumm_nine_elev"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "city"
-    t.string "email"
     t.index ["user_id"], name: "index_questionaires_on_user_id"
   end
 
@@ -57,20 +45,13 @@ ActiveRecord::Schema.define(version: 2018_12_08_102116) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "skills", force: :cascade do |t|
-    t.string "name"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "fname"
     t.string "lname"
-    t.string "va_number"
     t.string "email"
-    t.string "password_digest"
+    t.string "va_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "questionaire_skills", "questionaires"
-  add_foreign_key "questionaire_skills", "skills"
 end
