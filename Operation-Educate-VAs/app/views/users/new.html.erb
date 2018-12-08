@@ -15,20 +15,26 @@
     </head>
     <body>
         <%= form_with model: @user, local: true do |f| %>
-        <div class="tab">Name:
-          <%= f.text_field :fname %>
+        <div id = "tab-1">
+              <%= f.label :first_name %>
+              <%= f.text_field :fname %>
+                <br/>
+              <%= f.label :last_name %>
+              <%= f.text_field :lname %>
+              <br/>
 
-          <%= f.text_field :lname %>
-        </div>
-        <div class="tab">Contact-Info:
-          <%= f.label :email %>
-          <%= f.text_field :email %><br/>
 
-          <%= f.label :va_number %>
-          <%= f.text_field :va_number %><br/>
-        </div>
+              <%= f.label :email %>
+              <%= f.text_field :email %><br/>
+
+              <%= f.label :va_number %>
+              <%= f.text_field :va_number %><br/>
+             <button id = "next-1"> Next </button>
+          </div>
+
+
             <%= f.fields_for :questionaire, @user.questionaire do |quest| %>
-            <div class="tab">Personal-Info:
+            <div id = "tab-2" class = "hide">
               <div class="field">
                 <%= quest.label :date_of_birth %>
                 <%= quest.text_field :date_of_birth, class:"datepicker", type:"text" %>
@@ -41,25 +47,33 @@
                 <%= quest.label :city %>
                 <%= quest.text_field :city %>
               </div>
-            </div>
-            <div class="tab">Military History:
-              <div class="field">
-                <%= quest.label :military_start_date %>
-                <%= quest.text_field :military_start_date, class:"datepicker", type:"text" %>
-              </div>
-              <div class="field">
-                <%= quest.label :time_in_combat_in_months %>
-                <%= quest.text_field :time_in_combat %>
-              </div>
-              <div class="field">
-                <%= quest.label :discharge_date %>
-                <%= quest.text_field :discharge_date, class:"datepicker", type:"text" %>
-              </div>
-            </div>
               <div class="field">
                 <%= quest.label :dependents %>
                 <%= quest.text_field :dependents %>
               </div>
+              <button id = "next-2"> Next </button>
+            </div>
+            <div id = "tab-3" class = "hide">
+                  <div class="field">
+                    <%= quest.label :military_start_date %>
+                    <%= quest.text_field :military_start_date, class:"datepicker", type:"text" %>
+                  </div>
+                  <div class="field">
+                    <%= quest.label :time_in_combat_in_months %>
+                    <%= quest.text_field :time_in_combat %>
+                  </div>
+                  <div class="field">
+                    <%= quest.label :discharge_date %>
+                    <%= quest.text_field :discharge_date, class:"datepicker", type:"text" %>
+                  </div>
+                  <div class="field">
+                    <%= quest.label :Cummilitave_time_after_9_11_in_months, value: "Cummuliative time after 9/11" %>
+                    <%= quest.text_field :cumm_nine_elev %>
+                  </div>
+                  <button id = "next-3"> Next </button>
+            </div>
+
+            <div id = "tab-4" class = "hide">
               <div class="field">
                 <%= quest.label :education_level %>
                 <%= quest.text_field :education_level %>
@@ -69,13 +83,13 @@
                 <%= quest.label :Part_Time_or_Fulltime_Or_Online %>
                 <%= quest.text_field :part_online_fulltime %>
               </div>
-              <div class="field">
-                <%= quest.label :Cummilitave_time_after_9_11_in_months, value: "Cummuliative time after 9/11" %>
-                <%= quest.text_field :cumm_nine_elev %>
-              </div>
+               <%= f.submit "Sign Up"%>
+             </div>
+
             <%end%>
 
-          <%= f.submit "Sign Up"%>
+
         <% end %>
+
     </body>
 </html>
