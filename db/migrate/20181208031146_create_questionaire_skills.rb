@@ -4,6 +4,7 @@ class CreateQuestionaireSkills < ActiveRecord::Migration[5.2]
         t.references :questionaire, foreign_key: true
         t.references :skill, foreign_key: true
 
+
         t.timestamps
     end
   end

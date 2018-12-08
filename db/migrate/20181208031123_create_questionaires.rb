@@ -1,9 +1,7 @@
 class CreateQuestionaires < ActiveRecord::Migration[5.2]
   def change
     create_table :questionaires do |t|
-        t.references :user
-        t.string :fname
-        t.string :lname
+        t.string :name
         t.string :date_of_birth
         t.string :sex
         t.string :role_in_military
