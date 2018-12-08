@@ -84,7 +84,7 @@ data = { schools: [
  rep: "Joe Johnson",
  email: "jj@mit.edu",
  veterans: 4,
- tuition: 48000
+ tuition: 21000
 }
 
 ]
