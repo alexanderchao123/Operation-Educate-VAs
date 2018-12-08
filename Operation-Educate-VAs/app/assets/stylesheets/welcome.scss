@@ -1,6 +1,11 @@
-
-#button{
-    background-color: #4CAF50; /* Green */
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0px;
+  background-color: #f5f5f5;
+}
+.button{
+    background-color: #000; /* Green */
     border: none;
     color: white;
     padding: 15px 32px;
@@ -13,4 +18,31 @@
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
 
+}
+#button-container{
+    margin-left:35%;
+    margin-top: 5%;
+}
+
+.bg{
+    background:url(https://stmed.net/sites/default/files/styles/1280x720/public/american-flag-wallpapers-28380-1049216.jpg?itok=Dr9XoNjF) !important;
+    opacity: .75;
+    background-size:     cover !important;
+    background-repeat:   no-repeat !important;
+    background-position: center center !important;
+}
+.jumbotron{
+    z-index: 2;
+    opacity: 1;
+    margin:auto;
+    margin-top: 150px;
+    width: 80%;
+    height: 100%;
+}
+.welcome-jumbo{
+    text-align: center;
+}
+.test{
+    width:100%;
+    height: 100%;
 }

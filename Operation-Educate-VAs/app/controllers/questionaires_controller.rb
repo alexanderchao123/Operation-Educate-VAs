@@ -6,7 +6,6 @@ class QuestionairesController < ApplicationController
     def create
       @questionaire = Questionaire.new(questionaire_params)
       if @questionaire.save
-        # should render list of schools
         redirect_to questionaire_path(@questionaire)
       else
         render :new

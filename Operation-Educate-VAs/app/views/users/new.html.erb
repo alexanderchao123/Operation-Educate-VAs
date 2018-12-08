@@ -1,77 +1,35 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
- <link rel="stylesheet" href="/resources/demos/style.css">
-        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
- <script>
- $( function() {
-   $( ".datepicker" ).datepicker();
- } );
- </script>
-    </head>
-    <body>
-        <%= form_with model: @user, local: true do |f| %>
-        <div class="tab">Name:
-          <%= f.text_field :fname %>
+<div id = "form-container">
+  <%= form_with model: @user, local: true do |f| %>
+    <div id = "tab-1">
+      <h1>Personal Information</h1>
+      <%= f.text_field :fname, placeholder: "First Name" %>
+      <%= f.text_field :lname, placeholder: "Last Name" %>
+      <%= f.text_field :email, placeholder: "Email" %>
+      <%= f.text_field :va_number, placeholder: "VA Number" %>
+      <button id = "next-1" class = "form-button"> Next </button>
+    </div>
 
-          <%= f.text_field :lname %>
-        </div>
-        <div class="tab">Contact-Info:
-          <%= f.label :email %>
-          <%= f.text_field :email %><br/>
+    <%= f.fields_for :questionaire, @user.questionaire do |quest| %>
+      <div id = "tab-2" class = "hide">
+        <h1>Personal Information</h1>
+        <%= quest.text_field :date_of_birth, placeholder: "Date Of Birth", class:"datepicker", type:"text" %>
+        <%= quest.text_field :sex, placeholder: "Sex" %>
+        <%= quest.text_field :city, placeholder: "City" %>
+        <%= quest.text_field :dependents, placeholder: "Dependents" %>
+        <button id = "back-1" class = "form-button"> Back </button>
+        <button id = "next-2" class = "form-button"> Next </button>
+      </div>
 
-          <%= f.label :va_number %>
-          <%= f.text_field :va_number %><br/>
-        </div>
-            <%= f.fields_for :questionaire, @user.questionaire do |quest| %>
-            <div class="tab">Personal-Info:
-              <div class="field">
-                <%= quest.label :date_of_birth %>
-                <%= quest.text_field :date_of_birth, class:"datepicker", type:"text" %>
-              </div>
-              <div class="field">
-                <%= quest.label :sex %>
-                <%= quest.text_field :sex %>
-              </div>
-              <div class="field">
-                <%= quest.label :city %>
-                <%= quest.text_field :city %>
-              </div>
-            </div>
-            <div class="tab">Military History:
-              <div class="field">
-                <%= quest.label :military_start_date %>
-                <%= quest.text_field :military_start_date, class:"datepicker", type:"text" %>
-              </div>
-              <div class="field">
-                <%= quest.label :time_in_combat_in_months %>
-                <%= quest.text_field :time_in_combat %>
-              </div>
-              <div class="field">
-                <%= quest.label :discharge_date %>
-                <%= quest.text_field :discharge_date, class:"datepicker", type:"text" %>
-              </div>
-            </div>
-              <div class="field">
-                <%= quest.label :dependents %>
-                <%= quest.text_field :dependents %>
-              </div>
-              <div class="field">
-                <%= quest.label :education_level %>
-                <%= quest.text_field :education_level %>
-              </div>
-
-              <div class="field">
-                <%= quest.label :Part_Time_or_Fulltime_Or_Online %>
-                <%= quest.text_field :part_online_fulltime %>
-              </div>
-            <%end%>
-
-          <%= f.submit "Sign Up"%>
-        <% end %>
-    </body>
-</html>
+      <div id = "tab-3" class = "hide">
+        <h1>Military History</h1>
+        <%= quest.text_field :military_start_date, placeholder: "Military Start Date", class:"datepicker", type:"text" %>
+        <%= quest.text_field :time_in_combat, placeholder: "Time In Combat (months)" %>
+        <%= quest.text_field :discharge_date, placeholder: "Discharge Date", class:"datepicker", type:"text" %>
+        <%= quest.text_field :part_online_fulltime, placeholder: "Part-Time Full-Time Online" %>
+        <%= quest.text_field :education_level, placeholder: "Education Level" %>
+        <button id = "back-2" class = "form-button"> Back </button>
+        <%= f.submit "Submit", class: "form-button" %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
