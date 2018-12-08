@@ -25,7 +25,9 @@ ActiveRecord::Schema.define(version: 2018_12_08_031146) do
   end
 
   create_table "questionaires", force: :cascade do |t|
-    t.string "name"
+    t.bigint "user_id"
+    t.string "fname"
+    t.string "lname"
     t.string "date_of_birth"
     t.string "sex"
     t.string "role_in_military"
@@ -33,8 +35,12 @@ ActiveRecord::Schema.define(version: 2018_12_08_031146) do
     t.integer "time_in_combat"
     t.integer "dependents"
     t.string "education_level"
+    t.string "discharge_date"
+    t.string "part_online_fulltime"
+    t.string "cumm_nine_elev"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_questionaires_on_user_id"
   end
 
   create_table "skills", force: :cascade do |t|

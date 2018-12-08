@@ -11,6 +11,9 @@ class CreateQuestionaires < ActiveRecord::Migration[5.2]
         t.integer :time_in_combat
         t.integer :dependents
         t.string :education_level
+        t.string :discharge_date
+        t.string :part_online_fulltime
+        t.string :cumm_nine_elev
 
         t.timestamps
     end
