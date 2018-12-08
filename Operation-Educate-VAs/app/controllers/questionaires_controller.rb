@@ -30,5 +30,4 @@ class QuestionairesController < ApplicationController
       def questionaire_params
         params.require(:questionaire).permit(:name,:date_of_birth,:sex,:role_in_military, :time_in_military, :time_in_combat, :dependents, :education_level)
       end
-
 end
