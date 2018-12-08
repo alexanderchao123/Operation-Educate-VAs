@@ -1,0 +1,53 @@
+#vet-data{
+    padding-bottom: 50px;
+}
+#vet-data th{
+    text-align: center;
+    padding-left: 50px;
+}
+
+#vet-data td{
+    text-align: center;
+    padding-left: 50px;
+}
+#button{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin:auto;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+
+}
+#tab-1{
+    background-color: red;
+    width: 400px;
+    height: 100px;
+}
+#tab-2{
+    background-color: red;
+    width: 400px;
+    height: 100px;
+}
+#tab-3{
+    background-color: red;
+    width: 400px;
+    height: 100px;
+}
+#tab-4{
+    background-color: red;
+    width: 400px;
+    height: 100px;
+}
+.next{
+    width:25px;
+}
+.hide{
+display:none;
+}

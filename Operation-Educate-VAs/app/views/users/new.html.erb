@@ -1,32 +1,39 @@
-<%= form_with model: @user, local: true, id: "regForm" do |f| %>
-  <div class="tab" style="display: block;">
-    <p><%= f.text_field :fname, placeholder: "First Name" %></p>
-    <p><%= f.text_field :lname, placeholder: "Last Name" %></p>
-    <p><%= f.text_field :email, placeholder: "Email" %></p>
-    <p><%= f.text_field :va_number, placeholder: "VA Number" %></p>
-  </div>
+<div>
+  <%= form_with model: @user, local: true do |f| %>
+    <div id = "tab-1">
+      <p><%= f.text_field :fname, placeholder: "First Name" %></p>
+      <p><%= f.text_field :lname, placeholder: "Last Name" %></p>
+      <p><%= f.text_field :email, placeholder: "Email" %></p>
+      <p><%= f.text_field :va_number, placeholder: "VA Number" %></p>
+       <button id = "next-1"> Next </button>
+    </div>
+
 
     <%= f.fields_for :questionaire, @user.questionaire do |quest| %>
-      <div class="tab">
-        <p><%= quest.text_field :date_of_birth, placeholder: "Date Of Birth" %></p>
+      <div id = "tab-2" class = "hide">
+        <p><%= quest.text_field :date_of_birth, placeholder: "Date Of Birth", class:"datepicker", type:"text" %></p>
         <p><%= quest.text_field :sex, placeholder: "Sex" %></p>
-        <p><%= quest.text_field :time_in_military, placeholder: "Time In Military" %></p>
-        <p><%= quest.text_field :time_in_combat, placeholder: "Time In Combat" %></p>
-      </div>
-
-      <div class="tab">
+        <p><%= quest.text_field :city, placeholder: "City" %></p>
         <p><%= quest.text_field :dependents, placeholder: "Dependents" %></p>
-        <p><%= quest.text_field :education_level, placeholder: "Education Level" %></p>
-        <p><%= quest.text_field :discharge_date, placeholder: "Discharge Date" %></p>
-        <p><%= quest.text_field :part_online_fulltime, placeholder: "Part-Time Full-Time Online" %></p>
-        <p><%= quest.text_field :cumm_nine_elev, placeholder: "Cummulative Months After 9/11" %></p>
+        <button id = "back-1"> Back </button>
+        <button id = "next-2"> Next </button>
       </div>
-    <%end%>
 
-    <div style="overflow:auto;">
-      <div style="float:right;">
-        <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-        <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+      <div id = "tab-3" class = "hide">
+        <p><%= quest.text_field :military_start_date, placeholder: "Military Start Date", class:"datepicker", type:"text" %></p>
+        <p><%= quest.text_field :time_in_combat, placeholder: "Time In Combat (months)" %></p>
+        <p><%= quest.text_field :discharge_date, placeholder: "Discharge Date", class:"datepicker", type:"text" %></p>
+        <p><%= quest.text_field :cumm_nine_elev, placeholder: "Cummulative Months After 9/11" %></p>
+        <button id = "back-2"> Back </button>
+        <button id = "next-3"> Next </button>
       </div>
-    </div>
-<% end %>
+
+      <div id = "tab-4" class = "hide">
+        <p><%= quest.text_field :education_level, placeholder: "Education Level" %></p>
+        <p><%= quest.text_field :part_online_fulltime, placeholder: "Part-Time Full-Time Online" %></p>
+        <button id = "back-3"> Back </button>
+        <%= f.submit "Submit"%>
+      </div>
+    <% end %>
+  <% end %>
+</div>
