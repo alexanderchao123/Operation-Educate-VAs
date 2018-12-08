@@ -6,7 +6,6 @@
     </head>
     <body>
         <h1>Welcome <%= @user.fname %> <%= @user.lname %> </h1>
-        <%= @user.questionaire.military_start_date %>
         <h2>Please select all the schools you would like a VA counselor to contact you about</h2>
         <table id = "vet-data">
             <tr>
@@ -27,17 +26,11 @@
                 <td><%= school.email %></td>
                 <td><%= school.veterans %></td>
                 <td><%= school.tuition %></td>
-                <td><%= school.tuition_aid %></td>
+                <td><%= @output %></td>
                 <td><input type="checkbox" name="name1" />&nbsp;</td>
             </tr>
             <%end %>
         </table>
          <a id="button" id = "button-right">Send Email </a>
-
-
-
-
-
-
     </body>
 </html>

@@ -12,8 +12,7 @@ data = { schools: [
  rep: "Milly Watson",
  email: "mwatson@nysd.edu",
  veterans: 10,
- tuition: 43000,
- tuition_aid: 23672
+ tuition: 43000
 },
 {
  name:"New York University",
@@ -21,8 +20,7 @@ data = { schools: [
  rep: "Jane Watdaughter",
  email: "Watdaughter@nyu.edu",
  veterans: 12,
- tuition: 48500,
- tuition_aid: 23672
+ tuition: 48500
 },
 {
  name:"Culinary Institute",
@@ -30,8 +28,7 @@ data = { schools: [
  rep: "Tim Realperson",
  email: "trealperson@culinaryu.com",
  veterans: 8,
- tuition: 37295,
- tuition_aid: 23672
+ tuition: 37295
 },
 {
  name:"University of 5th ave",
@@ -39,8 +36,7 @@ data = { schools: [
  rep: "Johnny Brooklyn",
  email: "JBrook@u5.edu",
  veterans: 5,
- tuition: 29999,
- tuition_aid: 23672
+ tuition: 29999
 },
 {
  name:"University of Hard Knocks",
@@ -48,8 +44,7 @@ data = { schools: [
  rep: "Sean Carter",
  email: "scarter@uvhk.edu",
  veterans: 4,
- tuition: 34293,
- tuition_aid: 23672
+ tuition: 34293
 },
 {
  name:"University of Chicago",
@@ -57,8 +52,7 @@ data = { schools: [
  rep: "Barack Obama",
  email: "bobama@uoc.edu",
  veterans: 15,
- tuition: 48000,
- tuition_aid: 23672
+ tuition: 48000
 },
 {
  name:"UCLA",
@@ -66,8 +60,7 @@ data = { schools: [
  rep: "Michael Jackson",
  email: "MJ@ucla.edu",
  veterans: 25,
- tuition: 20000,
- tuition_aid: 20000
+ tuition: 20000
 },
 {
  name:"University of North Carolina",
@@ -75,8 +68,7 @@ data = { schools: [
  rep: "Charlotte Webb",
  email: "cwebb@unc.edu",
  veterans: 40,
- tuition: 21000,
- tuition_aid: 21000
+ tuition: 21000
 },
 {
  name:"Harvard University",
@@ -84,8 +76,7 @@ data = { schools: [
  rep: "Neil DeGrasse",
  email: "ndg@harvard.edu",
  veterans: 67,
- tuition: 51000,
- tuition_aid: 23672
+ tuition: 51000
 },
 {
  name:"MIT",
@@ -93,12 +84,11 @@ data = { schools: [
  rep: "Joe Johnson",
  email: "jj@mit.edu",
  veterans: 4,
- tuition: 48000,
- tuition_aid: 23672
+ tuition: 48000
 }
 
 ]
 }
 data[:"schools"].each do |schools|
- school = School.create(name: schools[:name], city: schools[:city], rep: schools[:rep], email: schools[:email], veterans: schools[:veterans], tuition: schools[:tuition], tuition_aid: schools[:tuition_aid] )
+ school = School.create(name: schools[:name], city: schools[:city], rep: schools[:rep], email: schools[:email], veterans: schools[:veterans], tuition: schools[:tuition])
 end
