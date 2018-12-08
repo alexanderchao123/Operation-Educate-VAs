@@ -5,8 +5,13 @@
         <title></title>
     </head>
     <body>
+        <div id="welcome">
         <h1>Welcome <%= @user.fname %> <%= @user.lname %> </h1>
-        <h2>Please select all the schools you would like a VA counselor to contact you about</h2>
+        </div>
+        <div id="direction">
+        <h2>Please select all the schools you would like a Veteran Admissions Officer to contact you from</h2>
+        </div>
+        <div id="data">
         <table id = "vet-data">
             <tr>
                 <th>Name of School</th>
@@ -36,6 +41,7 @@
             </tr>
             <% end %>
         </table>
+      </div>
          <a id="button" id = "button-right">Send Email </a>
     </body>
 </html>

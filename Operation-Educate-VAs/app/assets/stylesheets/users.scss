@@ -34,7 +34,7 @@ input::placeholder {
 }
 
 #button{
-  background-color: #4CAF50; /* Green */
+  background-color: #CD2026; /* Green */
   border: none;
   color: white;
   padding: 15px 32px;
@@ -46,6 +46,26 @@ input::placeholder {
   cursor: pointer;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
+  position: absolute;
+  left:47%;
+  bottom: 30%;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #BEBEBE}
+
+th {
+  background-color: #112e51;
+  color: white;
 }
 
 #tab-1{
@@ -85,3 +105,25 @@ input::placeholder {
   font-weight: 900;
   font-size: 14px;
 }
+
+#welcome{
+  position:absolute;
+  top: 0%;
+  left: 40%;
+  bottom: 80%;
+}
+
+#direction{
+  position:absolute;
+  left: 20%;
+  bottom: 80%;
+}
+
+#data{
+  position:absolute;
+  left: 15%;
+  right:40%;
+  top: 25%;
+}
+
+
