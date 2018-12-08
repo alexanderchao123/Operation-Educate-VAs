@@ -2,13 +2,14 @@ class QuestionairesController < ApplicationController
 
     def index
         @questionaire = Questionaire.new
-    
+
     end
     def new
         @questionaire = Questionaire.new
     end
     def create
         @questionaire = Questionaire.new(questionaire_params)
+        @questionaire.save
     end
     def edit
         @questionaire = Questionaire.find(params[:id])
