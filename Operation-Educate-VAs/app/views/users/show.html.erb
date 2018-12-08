@@ -26,10 +26,15 @@
                 <td><%= school.email %></td>
                 <td><%= school.veterans %></td>
                 <td><%= school.tuition %></td>
+                <% if @output.instance_of? Float %>
+                <% if @output > school.tuition %>
+                <% @output = school.tuition %>
+                <% end %>
+                <% end %>
                 <td><%= @output %></td>
                 <td><input type="checkbox" name="name1" />&nbsp;</td>
             </tr>
-            <%end %>
+            <% end %>
         </table>
          <a id="button" id = "button-right">Send Email </a>
     </body>

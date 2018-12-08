@@ -21,6 +21,6 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(:fname, :lname, :va_number, :email, questionaire_attributes: [:name,:date_of_birth,:sex,:role_in_military, :military_start_date, :time_in_combat, :dependents, :education_level, :city])
+      params.require(:user).permit(:fname, :lname, :va_number, :email, questionaire_attributes: [:name,:date_of_birth,:sex,:role_in_military, :military_start_date, :time_in_combat, :dependents, :education_level, :city, :discharge_date])
     end
 end

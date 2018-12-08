@@ -6,8 +6,8 @@ class Questionaire < ApplicationRecord
     def compute_output
       output = 0
       cutoff_date = '9/11/2001'
-      start_date = '5/14/2004' #change to self.military_start_date
-      discharge_date = '8/13/2008' #change to self.discharge_date
+      start_date = self.military_start_date
+      discharge_date = self.discharge_date
       expiration_date = '1/1/2013'
       start_date_values = start_date.split('/')
       discharge_date_values = discharge_date.split('/')
