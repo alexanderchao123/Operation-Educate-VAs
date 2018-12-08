@@ -1,7 +1,7 @@
 <div id = "form-container">
   <%= form_with model: @user, local: true do |f| %>
     <div id = "tab-1">
-      <h1>Personal Information</h1>
+      <h1 class="form-header">Personal Information</h1>
       <%= f.text_field :fname, placeholder: "First Name" %>
       <%= f.text_field :lname, placeholder: "Last Name" %>
       <%= f.text_field :email, placeholder: "Email" %>
@@ -11,7 +11,7 @@
 
     <%= f.fields_for :questionaire, @user.questionaire do |quest| %>
       <div id = "tab-2" class = "hide">
-        <h1>Personal Information</h1>
+        <h1 class="form-header">Personal Information</h1>
         <%= quest.text_field :date_of_birth, placeholder: "Date Of Birth", class:"datepicker", type:"text" %>
         <%= quest.text_field :sex, placeholder: "Sex" %>
         <%= quest.text_field :city, placeholder: "City" %>
@@ -21,7 +21,7 @@
       </div>
 
       <div id = "tab-3" class = "hide">
-        <h1>Military History</h1>
+        <h1 class="form-header">Military History</h1>
         <%= quest.text_field :military_start_date, placeholder: "Military Start Date", class:"datepicker", type:"text" %>
         <%= quest.text_field :time_in_combat, placeholder: "Time In Combat (months)" %>
         <%= quest.text_field :discharge_date, placeholder: "Discharge Date", class:"datepicker", type:"text" %>
