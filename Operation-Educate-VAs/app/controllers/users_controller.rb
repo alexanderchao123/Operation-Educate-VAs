@@ -27,8 +27,12 @@ class UsersController < ApplicationController
         # if time in military is > 3 years after 9/11 then tuition = 22,805.34
   end
 
+  def confirmation
+    # UserMailer.with()
+  end
+
   private
     def user_params
-      params.require(:user).permit(:fname, :lname, :va_number, :email, questionaire_attributes: [:name,:date_of_birth,:sex,:role_in_military, :military_start_date, :time_in_combat, :dependents, :education_level, :city])
+      params.require(:user).permit(:fname, :lname, :va_number, :email, questionaire_attributes: [:date_of_birth, :sex, :city, :role_in_military, :military_start_date, :time_in_combat, :dependents, :discharge_date, :education_level, :part_online_fulltime])
     end
 end

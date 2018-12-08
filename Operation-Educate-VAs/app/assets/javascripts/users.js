@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function(event) {
     let tab1 = document.getElementById("tab-1")
     let tab2 = document.getElementById("tab-2")
@@ -9,6 +8,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     let next3 = document.getElementById('next-3')
     let next4 = document.getElementById('next-4')
     let back1 = document.getElementById('back-1')
+    let back2 = document.getElementById('back-2')
+    let back3 = document.getElementById('back-3')
 
     next1.addEventListener('click',function(e){
         e.preventDefault()
