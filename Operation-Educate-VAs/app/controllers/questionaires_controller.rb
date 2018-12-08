@@ -1,28 +1,34 @@
 class QuestionairesController < ApplicationController
-
-    def index
-        @questionaire = Questionaire.new
-
-    end
     def new
-        @questionaire = Questionaire.new
+      @questionaire = Questionaire.new
     end
-    def create
-        @questionaire = Questionaire.new(questionaire_params)
-        @questionaire.save
-    end
-    def edit
-        @questionaire = Questionaire.find(params[:id])
-    end
-    def update
-        @questionaire = Questionaire.find(params[:id])
-        @questionaire.update(questionaire_params)
 
+    def create
+      @questionaire = Questionaire.new(questionaire_params)
+      if @questionaire.save
+        # should render list of schools
+        redirect_to questionaire_path(@questionaire)
+      else
+        render :new
+      end
+    end
+
+    def edit
+      @questionaire = Questionaire.find(id: params[:id])
+    end
+
+    def update
+      @questionaire = Questionaire.find(id: params[:id])
+      if @questionaire.update(questionaire_params)
+        redirect_to questionaire_path(@questionaire)
+      else
+        render :edit
+      end
     end
 
     private
-    def questionaire_params
+      def questionaire_params
         params.require(:questionaire).permit(:name,:date_of_birth,:sex,:role_in_military, :time_in_military, :time_in_combat, :dependents, :education_level)
-    end
+      end
 
 end
