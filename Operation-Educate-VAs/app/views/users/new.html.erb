@@ -51,6 +51,7 @@
                 <%= quest.label :dependents %>
                 <%= quest.text_field :dependents %>
               </div>
+              <button id = "back-1"> Back </button>
               <button id = "next-2"> Next </button>
             </div>
             <div id = "tab-3" class = "hide">
@@ -70,6 +71,7 @@
                     <%= quest.label :Cummilitave_time_after_9_11_in_months, value: "Cummuliative time after 9/11" %>
                     <%= quest.text_field :cumm_nine_elev %>
                   </div>
+                  <button id = "back-2"> Back </button>
                   <button id = "next-3"> Next </button>
             </div>
 
@@ -83,11 +85,12 @@
                 <%= quest.label :Part_Time_or_Fulltime_Or_Online %>
                 <%= quest.text_field :part_online_fulltime %>
               </div>
-               <%= f.submit "Sign Up"%>
-             </div>
+              <button id = "back-3"> Back </button>
 
+
+             <%= f.submit "Sign Up"%>
             <%end%>
-
+            </div>
 
         <% end %>
 
