@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_08_072324) do
+ActiveRecord::Schema.define(version: 2018_12_08_070052) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,8 +26,6 @@ ActiveRecord::Schema.define(version: 2018_12_08_072324) do
 
   create_table "questionaires", force: :cascade do |t|
     t.bigint "user_id"
-    t.string "fname"
-    t.string "lname"
     t.string "date_of_birth"
     t.string "sex"
     t.string "role_in_military"
@@ -41,7 +39,6 @@ ActiveRecord::Schema.define(version: 2018_12_08_072324) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "city"
-    t.string "email"
     t.index ["user_id"], name: "index_questionaires_on_user_id"
   end
 
@@ -52,9 +49,8 @@ ActiveRecord::Schema.define(version: 2018_12_08_072324) do
   create_table "users", force: :cascade do |t|
     t.string "fname"
     t.string "lname"
-    t.string "va_number"
     t.string "email"
-    t.string "password_digest"
+    t.string "va_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

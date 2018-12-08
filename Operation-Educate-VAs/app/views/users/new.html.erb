@@ -1,15 +1,54 @@
 <%= form_with model: @user, local: true do |f| %>
-  <%= f.label :va_number %>
-  <%= f.text_field :va_number %><br/>
+  <%= f.label :first_name %>
+  <%= f.text_field :fname %>
+
+  <%= f.label :last_name %>
+  <%= f.text_field :lname %>
 
   <%= f.label :email %>
   <%= f.text_field :email %><br/>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %><br/>
+  <%= f.label :va_number %>
+  <%= f.text_field :va_number %><br/>
 
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %><br/>
+    <%= f.fields_for :questionaire, @user.questionaire do |quest| %>
+      <div class="field">
+        <%= quest.label :date_of_birth %>
+        <%= quest.text_field :date_of_birth %>
+      </div>
+      <div class="field">
+        <%= quest.label :sex %>
+        <%= quest.text_field :sex %>
+      </div>
+      <div class="field">
+        <%= quest.label :time_in_military %>
+        <%= quest.text_field :time_in_military %>
+      </div>
+      <div class="field">
+        <%= quest.label :time_in_combat %>
+        <%= quest.text_field :time_in_combat %>
+      </div>
+      <div class="field">
+        <%= quest.label :dependents %>
+        <%= quest.text_field :dependents %>
+      </div>
+      <div class="field">
+        <%= quest.label :education_level %>
+        <%= quest.text_field :education_level %>
+      </div>
+      <div class="field">
+        <%= quest.label :discharge_date %>
+        <%= quest.text_field :discharge_date %>
+      </div>
+      <div class="field">
+        <%= quest.label :part_online_fulltime %>
+        <%= quest.text_field :part_online_fulltime %>
+      </div>
+      <div class="field">
+        <%= quest.label :cumm_nine_elev %>
+        <%= quest.text_field :cumm_nine_elev %>
+      </div>
+    <%end%>
 
   <%= f.submit "Sign Up"%>
 <% end %>

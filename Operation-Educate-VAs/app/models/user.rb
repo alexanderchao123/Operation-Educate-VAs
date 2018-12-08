@@ -1,5 +1,4 @@
 class User < ApplicationRecord
     has_one :questionaire
-    accepts_nested_attributes :questionaire
-    has_secure_password
+    accepts_nested_attributes_for :questionaire
 end

@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def new
     @user = User.new()
+    @user.questionaire = Questionaire.new()
   end
 
   def create
@@ -14,6 +15,6 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(:va_number, :email, :password)
+      params.require(:user).permit(:fname, :lname, :va_number, :email, questionaire_attributes: [:name,:date_of_birth,:sex,:role_in_military, :time_in_military, :time_in_combat, :dependents, :education_level])
     end
 end
