@@ -21,6 +21,10 @@
         <%= quest.text_field :sex %>
       </div>
       <div class="field">
+        <%= quest.label :city %>
+        <%= quest.text_field :city %>
+      </div>
+      <div class="field">
         <%= quest.label :time_in_military %>
         <%= quest.text_field :time_in_military %>
       </div>
@@ -48,6 +52,7 @@
         <%= quest.label :cumm_nine_elev %>
         <%= quest.text_field :cumm_nine_elev %>
       </div>
+
     <%end%>
 
   <%= f.submit "Sign Up"%>
